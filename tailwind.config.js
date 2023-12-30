@@ -12,6 +12,8 @@ module.exports = {
       colors: {
         "color-primary": "#f0f0f0",
         "color-secondary": "#2982DB",
+        "secondary-hover": "#1C61B7",
+        "secondary-active": "#124493",
         card: "#f9f9f9",
         "primary-100": "#D7F6FF",
         "primary-200": "#AFE8FF",

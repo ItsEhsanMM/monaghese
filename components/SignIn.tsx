@@ -122,7 +122,7 @@ const SignIn = () => {
           />
 
           <div className="mb-2 mt-5 flex flex-col justify-evenly gap-5">
-            <div className="group flex  cursor-pointer justify-center rounded-md bg-color-secondary text-card">
+            <div className="group flex cursor-pointer justify-center  rounded-md bg-color-secondary text-card transition duration-500 ease-in-out active:bg-secondary-active md:hover:bg-secondary-hover">
               <Button
                 type="submit"
                 className="text-base"
@@ -134,19 +134,19 @@ const SignIn = () => {
                 alt="arrow left"
                 width={16}
                 height={16}
-                className="transition-all group-hover:-translate-x-3"
+                className="hidden transition-all group-hover:-translate-x-3  md:block"
                 src="/assets/icons/arrow-left.svg"
               />
             </div>
             <Link
               href="/auth/signup"
-              className="group flex  cursor-pointer items-center justify-center px-4 text-color-secondary"
+              className="group flex cursor-pointer items-center justify-center px-4 text-color-secondary"
             >
               <Image
                 alt="arrow right"
                 width={16}
                 height={16}
-                className="transition-all group-hover:translate-x-3"
+                className="hidden transition-all group-hover:translate-x-3  md:block"
                 src="/assets/icons/arrow-right.svg"
               />
               <Button className="text-base">ثبت نام</Button>
