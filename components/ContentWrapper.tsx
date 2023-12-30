@@ -5,6 +5,6 @@ interface Props {
 }
 
 const ContentWrapper = ({ children }: Props) => {
-  return <div className="bg-color-primary min-h-screen px-5">{children}</div>;
+  return <div className="min-h-screen bg-color-primary px-5">{children}</div>;
 };
 export default ContentWrapper;
