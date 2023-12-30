@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-Thin.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-ExtraLight.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-ExtraLight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-Light.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-Medium.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-SemiBold.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -52,7 +52,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -60,7 +60,7 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-ExtraBold.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -68,12 +68,26 @@
 
 @font-face {
   font-family: Vazirmatn;
-  src: url("/style/fonts/Vazirmatn-Black.woff2") format("woff2");
+  src: url("../style/fonts/Vazirmatn-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
-html {
+body {
   font-family: Vazirmatn, sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+@layer layer {
+  .no-focus {
+    @apply focus-visible:ring-0
+     focus-visible:ring-transparent
+     focus-visible:ring-offset-0 !important;
+  }
 }
