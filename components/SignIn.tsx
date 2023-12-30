@@ -63,6 +63,7 @@ const SignIn = () => {
     }
   };
 
+  // TODO: make sure to refactor the code and make it reusable for better performance
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center gap-5">
       <Form {...form}>
