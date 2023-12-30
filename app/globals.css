@@ -82,6 +82,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   /* outline: 1px solid red; */
+  user-select: none;
 }
 
 @layer layer {

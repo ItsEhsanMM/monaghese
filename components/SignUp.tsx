@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { signInFormSchema } from "@/lib/validation";
+import { signUpFormSchema } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -17,23 +17,25 @@ import {
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
-import { SignInFormDataType } from "@/types";
+import { SignUpFormDataType } from "@/types";
 
-const SignIn = () => {
+const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [serverError, setServerError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState("");
 
-  const form = useForm<z.infer<typeof signInFormSchema>>({
-    resolver: zodResolver(signInFormSchema),
+  const form = useForm<z.infer<typeof signUpFormSchema>>({
+    resolver: zodResolver(signUpFormSchema),
     defaultValues: {
+      fullName: "",
+      email: "",
       username: "",
       password: "",
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof signInFormSchema>) => {
+  const onSubmit = async (values: z.infer<typeof signUpFormSchema>) => {
     setIsSubmitting(true);
     setErrors({});
     setServerError(null);
@@ -43,9 +45,9 @@ const SignIn = () => {
       // Make API call to submit form data
       // If there is an error, set the serverError state with the error message
       // Otherwise, handle successful form submission
-      // TODO: make an api call to database in server by user ID
+      // TODO: make an API call to database on the server by user ID
       console.log(values);
-      setSuccessMessage("ورود با موفقیت انجام شد !");
+      setSuccessMessage("ثبت نام با موفقیت انجام شد !");
     } catch (error: any) {
       setServerError(error || null);
     } finally {
@@ -54,7 +56,7 @@ const SignIn = () => {
   };
 
   const renderFormField = (
-    name: SignInFormDataType,
+    name: SignUpFormDataType,
     label: string,
     placeholder: string,
     type: string = "text"
@@ -97,6 +99,12 @@ const SignIn = () => {
             />
             <span>شرکت ملی نفت ایران</span>
           </div>
+          {renderFormField(
+            "fullName",
+            "نام و نام خانوادگی:",
+            "مثال: John Doe یا احسان محمدی"
+          )}
+          {renderFormField("email", "ایمیل:", "مثال: johndoe@gmail.com")}
           {renderFormField("username", "نام کاربری:", "مثال: JohnDoe12")}
           {renderFormField(
             "password",
@@ -112,7 +120,7 @@ const SignIn = () => {
                 className="text-base"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "در حال ارسال..." : "ورود"}
+                {isSubmitting ? "در حال ارسال..." : "ثبت نام"}
               </Button>
               <Image
                 alt="arrow left"
@@ -123,7 +131,7 @@ const SignIn = () => {
               />
             </div>
             <Link
-              href="/auth/signup"
+              href="/auth/signin"
               className="group flex cursor-pointer items-center justify-center px-4 text-color-secondary"
             >
               <Image
@@ -133,7 +141,7 @@ const SignIn = () => {
                 className="hidden transition-all group-hover:translate-x-3 md:block"
                 src="/assets/icons/arrow-right.svg"
               />
-              <Button className="text-base">ثبت نام</Button>
+              <Button className="text-base">ورود</Button>
             </Link>
           </div>
         </form>
@@ -150,4 +158,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
