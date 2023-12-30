@@ -114,7 +114,10 @@ const SignUp = () => {
           )}
 
           <div className="mb-2 mt-5 flex flex-col justify-evenly gap-5">
-            <div className="group flex cursor-pointer justify-center rounded-md bg-color-secondary text-card transition duration-500 ease-in-out active:bg-secondary-active md:hover:bg-secondary-hover">
+            <div
+              onClick={() => form.handleSubmit(onSubmit)()}
+              className="group flex cursor-pointer justify-center rounded-md bg-color-secondary text-card transition duration-500 ease-in-out active:bg-secondary-active md:hover:bg-secondary-hover"
+            >
               <Button
                 type="submit"
                 className="text-base"
